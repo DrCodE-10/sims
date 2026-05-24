@@ -1,0 +1,301 @@
+/**
+ * SIMS - Futuristic CSS
+ * Student Information Management System
+ * 
+ * Cyberpunk-inspired glassmorphism UI with neon effects
+ */
+
+/* CSS Variables for Theme System */
+:root {
+    --primary-neon: #00f0ff;
+    --secondary-neon: #ff00ff;
+    --accent-neon: #00ff88;
+    --warning-neon: #ffaa00;
+    --danger-neon: #ff3366;
+    
+    --bg-dark: #0a0a0f;
+    --bg-darker: #050508;
+    --bg-card: rgba(15, 15, 25, 0.7);
+    --bg-card-hover: rgba(20, 20, 35, 0.8);
+    
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0b0;
+    --text-muted: #606070;
+    
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    
+    --neon-glow: 0 0 20px rgba(0, 240, 255, 0.5);
+    --neon-glow-strong: 0 0 40px rgba(0, 240, 255, 0.8);
+    
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* Dark Theme Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Page background — solid only (no flowing gradients or particles) */
+.matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-dark);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    box-shadow: var(--glass-shadow);
+    transition: all var(--transition-normal);
+}
+
+.glass-card:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(0, 240, 255, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 240, 255, 0.2);
+}
+
+/* Neon Buttons */
+.neon-btn {
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(0, 240, 255, 0.1));
+    border: 2px solid var(--primary-neon);
+    color: var(--primary-neon);
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.neon-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.4), transparent);
+    transition: left var(--transition-slow);
+}
+
+.neon-btn:hover::before {
+    left: 100%;
+}
+
+.neon-btn:hover {
+    background: var(--primary-neon);
+    color: var(--bg-dark);
+    box-shadow: var(--neon-glow);
+    transform: scale(1.05);
+}
+
+.neon-btn:active {
+    transform: scale(0.98);
+}
+
+/* Secondary Neon Button */
+.neon-btn-secondary {
+    border-color: var(--secondary-neon);
+    color: var(--secondary-neon);
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.2), rgba(255, 0, 255, 0.1));
+}
+
+.neon-btn-secondary:hover {
+    background: var(--secondary-neon);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+}
+
+/* Accent Neon Button */
+.neon-btn-accent {
+    border-color: var(--accent-neon);
+    color: var(--accent-neon);
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.2), rgba(0, 255, 136, 0.1));
+}
+
+.neon-btn-accent:hover {
+    background: var(--accent-neon);
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+}
+
+/* Input Fields with Neon Effects */
+.neon-input {
+    background: rgba(15, 15, 25, 0.8);
+    border: 2px solid var(--glass-border);
+    border-radius: 15px;
+    padding: 15px 20px;
+    color: var(--text-primary);
+    font-size: 16px;
+    transition: all var(--transition-normal);
+    width: 100%;
+}
+
+.neon-input:focus {
+    outline: none;
+    border-color: var(--primary-neon);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+}
+
+.neon-input::placeholder {
+    color: var(--text-muted);
+}
+
+/* Neon Text Effects */
+.neon-text {
+    color: var(--primary-neon);
+    text-shadow: var(--neon-glow);
+}
+
+.neon-text-secondary {
+    color: var(--secondary-neon);
+    text-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+}
+
+.neon-text-accent {
+    color: var(--accent-neon);
+    text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+}
+
+/* Animated Border */
+.animated-border {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.animated-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--primary-neon), var(--secondary-neon), var(--accent-neon), var(--primary-neon));
+    background-size: 400% 400%;
+    z-index: -1;
+    border-radius: 22px;
+    animation: gradientBorder 3s ease infinite;
+}
+
+@keyframes gradientBorder {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Floating particles — disabled */
+.particles,
+.particles-container,
+.particle {
+    display: none !important;
+}
+
+/* Holographic Effect */
+.holographic {
+    background: linear-gradient(135deg, 
+        rgba(0, 240, 255, 0.1) 0%,
+        rgba(255, 0, 255, 0.1) 50%,
+        rgba(0, 255, 136, 0.1) 100%);
+    background-size: 200% 200%;
+    animation: holographicShift 5s ease infinite;
+}
+
+@keyframes holographicShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-darker);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--primary-neon), var(--secondary-neon));
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(var(--secondary-neon), var(--primary-neon));
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .glass-card {
+        border-radius: 15px;
+        padding: 15px;
+    }
+    
+    .neon-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    .neon-input {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .neon-btn {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+}
+
+/* Mobile interaction adjustments */
+html, body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    touch-action: manipulation;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+button, .neon-btn, .nav-item {
+    -webkit-tap-highlight-color: transparent;
+}
+
+input, button, .neon-input {
+    font-size: 16px;
+    min-height: 44px;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+

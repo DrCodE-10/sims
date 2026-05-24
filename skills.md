@@ -1,19 +1,19 @@
-# SIMS 
-## Student Intelligence Management System
+# SIMS
+## Student Information Management System
 
-> Next-Generation AI-Powered Academic Management Platform
+> Next-Generation Academic Management Platform
 
 ---
 
 # PROJECT VISION
 
-SIMS  is not just a normal student management system.
+SIMS is not just a normal student management system.
 
-It is a futuristic AI-powered digital campus ecosystem designed with:
+It is a futuristic digital campus ecosystem designed with:
 - Cyberpunk-inspired interfaces
 - Glassmorphism UI
 - Neon holographic effects
-- AI automation
+- Automation
 - Real-time analytics
 - Smart dashboards
 - Responsive 3D interfaces
@@ -33,7 +33,7 @@ The project should combine:
 - Minimal futuristic layouts
 - Glassmorphism
 - Dark neon themes
-- AI dashboard design
+- Dashboard design
 - Floating UI cards
 - Animated gradients
 - Holographic effects
@@ -112,7 +112,7 @@ Skills:
 - Real-time search
 - Toast notifications
 - Dynamic modals
-- AI assistant widgets
+- Assistant widgets
 
 ---
 
@@ -162,22 +162,22 @@ Skills:
 
 ---
 
-# AI-POWERED FEATURES
+# ANALYTICS FEATURES
 
-## Artificial Intelligence Modules
+## Analytics Modules
 
-### AI Student Analytics
+### Student Analytics
 - Predict GPA trends
 - Performance analysis
 - Attendance prediction
 - Smart recommendations
 
-### AI Dashboard
+### Dashboard Analytics
 - Smart statistics
 - Intelligent notifications
-- AI-generated reports
+- Generated reports
 
-### AI Assistant Chatbot
+### Assistant Chatbot
 Features:
 - Student help assistant
 - Admin assistant
@@ -221,7 +221,7 @@ Features:
 ## 2. Smart Dashboard
 Features:
 - Real-time statistics
-- AI insights
+- Insights
 - Animated charts
 - Live student activity
 - Holographic widgets
@@ -326,7 +326,7 @@ Skills:
 # FILE STRUCTURE ARCHITECTURE
 
 ```plaintext
-SIMS-2050/
+SIMS/
 │
 ├── assets/
 │   ├── css/
